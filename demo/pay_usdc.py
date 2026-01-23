@@ -6,7 +6,7 @@ ARC_API_KEY = os.getenv("ARC_API_KEY")
 
 def pay_usdc(amount, recipient):
     if not ARC_API_KEY:
-        raise RuntimeError("ARC_API_KEY not set")
+        print("[WARNING] ARC_API_KEY not set - running in demo mode")
 
     payload = {
         "asset": "USDC",

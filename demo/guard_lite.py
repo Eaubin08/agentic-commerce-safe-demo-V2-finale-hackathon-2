@@ -4,7 +4,6 @@ import time
 _LAST_ACTION_TS = None
 
 def evaluate(action):
-<<<<<<< HEAD
     """
     Opaque temporal & coherence safety gate.
     Behavior is observable, logic is intentionally minimal.
@@ -31,8 +30,3 @@ def evaluate(action):
         _LAST_ACTION_TS = now
 
     return "ALLOW"
-=======
-    if action.get("amount_usdc", 0) <= 5:
-        return "ALLOW"
-    return "BLOCK"
->>>>>>> 2847546 (Add temporal & coherence safety gate (hackathon demo))

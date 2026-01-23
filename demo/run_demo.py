@@ -1,6 +1,6 @@
-from agent import agent_request
-from guard_lite import evaluate
-from pay_usdc import pay_usdc
+from demo.agent import agent_request
+from demo.guard_lite import evaluate
+from demo.pay_usdc import pay_usdc
 
 action = agent_request({"amount": 3, "recipient": "api_provider"})
 decision = evaluate(action)
