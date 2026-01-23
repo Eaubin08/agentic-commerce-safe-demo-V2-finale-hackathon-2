@@ -188,19 +188,15 @@ with tab2:
             now = time.time()
             
             # Evaluate with safety gate
-            decision = evaluate(
-                action=action,
-                now_ts=now,
-                last_signal_ts=st.session_state.last_payment_time
-            )
+            decision_result = evaluate(action)
             
             # Display result
             st.divider()
             
-            if decision['action'] == 'ALLOW':
+            if decision_result == 'ALLOW':
                 st.markdown('<div class="success-box">', unsafe_allow_html=True)
                 st.success(f"✅ **PAYMENT ALLOWED**")
-                st.markdown(f"**Reason:** {decision['reason']}")
+                st.markdown(f"**Reason:** Payment passed all safety checks")
                 st.markdown('</div>', unsafe_allow_html=True)
                 
                 # Execute payment
@@ -212,7 +208,7 @@ with tab2:
             else:
                 st.markdown('<div class="danger-box">', unsafe_allow_html=True)
                 st.error(f"❌ **PAYMENT BLOCKED**")
-                st.markdown(f"**Reason:** {decision['reason']}")
+                st.markdown(f"**Reason:** Safety gate blocked this payment")
                 st.markdown('</div>', unsafe_allow_html=True)
             
             # Add to history
@@ -222,8 +218,8 @@ with tab2:
                 'recipient': recipient,
                 'coherence': coherence,
                 'intent': intent,
-                'decision': decision['action'],
-                'reason': decision['reason']
+                'decision': decision_result,
+                'reason': 'Passed safety checks' if decision_result == 'ALLOW' else 'Blocked by safety gate'
             })
 
 # Tab 3: Automated Tests
@@ -283,20 +279,16 @@ with tab3:
                 
                 # Evaluate
                 now = time.time()
-                decision = evaluate(
-                    action=scenario['action'],
-                    now_ts=now,
-                    last_signal_ts=st.session_state.last_payment_time
-                )
+                decision_result = evaluate(scenario['action'])
                 
                 # Update last payment time if allowed
-                if decision['action'] == 'ALLOW':
+                if decision_result == 'ALLOW':
                     st.session_state.last_payment_time = now
                 
                 results.append({
                     'Scenario': scenario['name'],
-                    'Result': '✅ ALLOW' if decision['action'] == 'ALLOW' else '❌ BLOCK',
-                    'Reason': decision['reason']
+                    'Result': '✅ ALLOW' if decision_result == 'ALLOW' else '❌ BLOCK',
+                    'Reason': 'Passed safety checks' if decision_result == 'ALLOW' else 'Blocked by safety gate'
                 })
                 
                 # Add to history
@@ -306,8 +298,8 @@ with tab3:
                     'recipient': scenario['action']['recipient'],
                     'coherence': scenario['action']['coherence'],
                     'intent': scenario['action']['intent'],
-                    'decision': decision['action'],
-                    'reason': decision['reason']
+                    'decision': decision_result,
+                    'reason': 'Passed safety checks' if decision_result == 'ALLOW' else 'Blocked by safety gate'
                 })
                 
                 progress_bar.progress((i + 1) / len(scenarios))
@@ -359,18 +351,14 @@ with tab3:
                 
                 # Evaluate
                 now = time.time()
-                decision = evaluate(
-                    action=scenario['action'],
-                    now_ts=now,
-                    last_signal_ts=st.session_state.last_payment_time
-                )
+                decision_result = evaluate(scenario['action'])
                 
                 # Display result
-                if decision['action'] == 'ALLOW':
-                    st.success(f"✅ ALLOW: {decision['reason']}")
+                if decision_result == 'ALLOW':
+                    st.success(f"✅ ALLOW: Passed safety checks")
                     st.session_state.last_payment_time = now
                 else:
-                    st.error(f"❌ BLOCK: {decision['reason']}")
+                    st.error(f"❌ BLOCK: Blocked by safety gate")
                 
                 # Add to history
                 st.session_state.transaction_history.append({
@@ -379,8 +367,8 @@ with tab3:
                     'recipient': scenario['action']['recipient'],
                     'coherence': scenario['action']['coherence'],
                     'intent': scenario['action']['intent'],
-                    'decision': decision['action'],
-                    'reason': decision['reason']
+                    'decision': decision_result,
+                    'reason': 'Passed safety checks' if decision_result == 'ALLOW' else 'Blocked by safety gate'
                 })
 
 # Tab 4: Transaction History
