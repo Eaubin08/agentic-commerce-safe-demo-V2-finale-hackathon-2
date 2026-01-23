@@ -146,7 +146,7 @@ streamlit run ui/app.py
 
 Note sur le comportement
 
-Voir SAFETY_SCALE.md pour une explication courte (EN/FR) de l’échelle de sécurité (1–10) et pourquoi :
+Voir SAFETY_SCALE.md pour une explication courte (EN/FR) de l’échelle de sécurité (1–10) et pourquoi : 
 
 Un paiement peut passer en CLI
 
