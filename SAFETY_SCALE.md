@@ -1,91 +1,94 @@
-# Safety Scale (Demo Explanation)
+🧭 SAFETY SCALE (1–10)
+🇬🇧 English — Safety Scale
 
-## 🇬🇧 English
+The safety scale used in this demo is a behavioral scale, not an intelligence score.
 
-This demo uses a **simple safety scale from 1 to 10** to illustrate decision gating
-before any USDC payment.
+It does not measure:
 
-This scale is **not a real risk model**.
-It is a **pedagogical abstraction** for hackathon purposes.
+intelligence
 
----
+optimization
 
-### Scale interpretation
+learning
 
-- **1–5** → Low risk  
-  Action is considered safe  
-  → Payment allowed (demo mode)
+reasoning quality
 
-- **6–10** → Elevated or ambiguous risk  
-  Action is considered unsafe  
-  → Payment blocked
+It measures structural safety conditions.
 
----
+Core principles
 
-### Why payments may differ between CLI and UI
+Low values (1–3):
+Immediate, simple, low-risk actions
+→ payment may be allowed
 
-- The **CLI demo** runs a predefined low-risk scenario (amount = 3)
-  → Payment is allowed.
+Medium values (4–6):
+Ambiguous intent, missing context, or insufficient temporal validation
+→ HOLD is preferred
 
-- The **UI demo** allows interactive values (1–10)
-  → Payments above the threshold are intentionally blocked.
+High values (7–10):
+Incoherent, premature, or structurally unsafe actions
+→ payment is blocked (HOLD)
 
-This difference is **intentional** and demonstrates the safety gate in action.
+Important behavior
 
----
+A payment may be allowed in CLI
+but blocked in the UI
 
-### Important note
+This is intentional.
 
-This scale does **not** represent:
-- a real financial risk engine
-- a fraud detection system
-- a production rule set
+The UI introduces:
 
-It is a **visual and conceptual tool** to show
-how decision gating works before settlement.
+more context
 
----
+more time constraints
 
-## 🇫🇷 Français
+stricter coherence requirements
 
-Cette démo utilise une **échelle de sécurité simple de 1 à 10**
-pour illustrer le contrôle décisionnel avant tout paiement USDC.
+This demonstrates that safety increases with context, not intelligence.
 
-Cette échelle **n’est pas un vrai modèle de risque**.
-Il s’agit d’une **abstraction pédagogique** utilisée pour le hackathon.
+🇫🇷 Français — Échelle de sécurité
 
----
+L’échelle de sécurité utilisée dans cette démo est une échelle comportementale, pas une mesure d’intelligence.
 
-### Interprétation de l’échelle
+Elle ne mesure pas :
 
-- **1–5** → Risque faible  
-  Action considérée comme sûre  
-  → Paiement autorisé (mode démo)
+l’intelligence
 
-- **6–10** → Risque élevé ou ambigu  
-  Action considérée comme non sûre  
-  → Paiement bloqué
+l’optimisation
 
----
+l’apprentissage
 
-### Pourquoi le paiement diffère entre la CLI et l’UI
+la qualité du raisonnement
 
-- La **démo en ligne de commande (CLI)** exécute un scénario sûr prédéfini (montant = 3)
-  → Paiement autorisé.
+Elle mesure des conditions structurelles de sécurité.
 
-- La **démo UI** permet de choisir une valeur interactive (1–10)
-  → Les valeurs au-dessus du seuil sont volontairement bloquées.
+Principes clés
 
-Cette différence est **volontaire** et montre le rôle de la barrière de sécurité.
+Valeurs basses (1–3) :
+Actions immédiates, simples, à faible risque
+→ paiement parfois autorisé
 
----
+Valeurs moyennes (4–6) :
+Intention ambiguë, contexte incomplet, validation temporelle insuffisante
+→ HOLD privilégié
 
-### Note importante
+Valeurs élevées (7–10) :
+Actions incohérentes, prématurées ou structurellement dangereuses
+→ paiement bloqué (HOLD)
 
-Cette échelle ne représente **pas** :
-- un moteur de risque réel
-- un système anti-fraude
-- des règles de production
+Comportement important
 
-C’est un **outil conceptuel** destiné à illustrer
-le contrôle avant règlement.
+Un paiement peut passer en CLI
+mais être bloqué dans l’UI
+
+C’est volontaire.
+
+L’interface ajoute :
+
+plus de contexte
+
+plus de contraintes temporelles
+
+plus d’exigences de cohérence
+
+Cela montre que la sécurité vient de la structure, pas de l’intelligence.
