@@ -4,43 +4,7 @@
 
 ---
 
-## 🚀 Lancer la Démo (Quick Start)
 
-### Option 1 : Tests Automatiques ⭐ Recommandé pour Découvrir
-
-Exécute automatiquement 5 scénarios de test pour démontrer toutes les règles de sécurité.
-
-**Windows PowerShell :**
-```powershell
-.\run_tests.ps1
-```
-
-**Linux/Mac :**
-```bash
-./run_tests.sh
-```
-
-**Durée :** ~25 secondes | **Résultat :** Voir tous les cas (autorisés/bloqués)
-
----
-
-### Option 2 : Interface Web Interactive ⭐ Recommandé pour Présenter
-
-Interface professionnelle avec 3 onglets (mode interactif, tests automatiques, historique).
-
-**Windows PowerShell :**
-```powershell
-.\run_ui_enhanced.ps1
-```
-
-**Linux/Mac :**
-```bash
-./run_ui_enhanced.sh
-```
-
-**URL :** Ouvrir `http://localhost:8501` dans votre navigateur
-
----
 
 ## 🇬🇧 English
 
@@ -83,7 +47,43 @@ Specifically, it shows that:
 The decision logic is intentionally opaque and non-explainable, focusing on observable behavior, not reasoning disclosure.
 
 ---
+## 🚀 Lancer la Démo (Quick Start)
 
+### Option 1 : Tests Automatiques ⭐ Recommandé pour Découvrir
+
+Exécute automatiquement 5 scénarios de test pour démontrer toutes les règles de sécurité.
+
+**Windows PowerShell :**
+```powershell
+.\run_tests.ps1
+```
+
+**Linux/Mac :**
+```bash
+./run_tests.sh
+```
+
+**Durée :** ~25 secondes | **Résultat :** Voir tous les cas (autorisés/bloqués)
+
+---
+
+### Option 2 : Interface Web Interactive ⭐ Recommandé pour Présenter
+
+Interface professionnelle avec 3 onglets (mode interactif, tests automatiques, historique).
+
+**Windows PowerShell :**
+```powershell
+.\run_ui_enhanced.ps1
+```
+
+**Linux/Mac :**
+```bash
+./run_ui_enhanced.sh
+```
+
+**URL :** Ouvrir `http://localhost:8501` dans votre navigateur
+
+---
 ### 🎯 Demo Modes
 
 This project provides **4 different modes** to explore and test the safety system:
