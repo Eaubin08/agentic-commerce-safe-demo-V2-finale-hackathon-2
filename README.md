@@ -1,5 +1,45 @@
 # Agentic Commerce — Safe USDC Payments (Arc)
 
+> **Démonstration d'un système de sécurité pour paiements autonomes par IA**
+
+---
+
+## 🚀 Lancer la Démo (Quick Start)
+
+### Option 1 : Tests Automatiques ⭐ Recommandé pour Découvrir
+
+Exécute automatiquement 5 scénarios de test pour démontrer toutes les règles de sécurité.
+
+**Windows PowerShell :**
+```powershell
+.\run_tests.ps1
+```
+
+**Linux/Mac :**
+```bash
+./run_tests.sh
+```
+
+**Durée :** ~25 secondes | **Résultat :** Voir tous les cas (autorisés/bloqués)
+
+---
+
+### Option 2 : Interface Web Interactive ⭐ Recommandé pour Présenter
+
+Interface professionnelle avec 3 onglets (mode interactif, tests automatiques, historique).
+
+**Windows PowerShell :**
+```powershell
+.\run_ui_enhanced.ps1
+```
+
+**Linux/Mac :**
+```bash
+./run_ui_enhanced.sh
+```
+
+**URL :** Ouvrir `http://localhost:8501` dans votre navigateur
+
 ---
 
 ## 🇬🇧 English
@@ -48,7 +88,8 @@ The decision logic is intentionally opaque and non-explainable, focusing on obse
 
 This project provides **4 different modes** to explore and test the safety system:
 
-#### 1. 🧪 Automated Test Scenarios
+#### 1. 🧪 Automated Test Scenarios ⭐ Best for First Use
+
 Run 5 predefined test scenarios automatically to demonstrate all safety rules.
 
 ```bash
@@ -58,19 +99,21 @@ Run 5 predefined test scenarios automatically to demonstrate all safety rules.
 
 **Duration:** ~25 seconds | **Scenarios:** 5 automatic tests
 
-#### 2. 🎮 Interactive CLI Demo
-Test custom payment scenarios with your own parameters (amount, recipient, coherence score).
+**What you'll see:**
+- ✅ Normal payment (3 USDC) → ALLOWED
+- ❌ Rapid payment (< 10s) → BLOCKED (temporal constraint)
+- ❌ Low coherence (0.3) → BLOCKED (suspicious action)
+- ✅ Payment after delay → ALLOWED
+- ✅ Excellent coherence (0.95) → ALLOWED
 
-```bash
-./run_interactive.sh    # Linux/Mac
-.\run_interactive.ps1   # Windows PowerShell
-```
+**Result:** 40% blocked = active protection
 
-**Duration:** Variable | **Scenarios:** Unlimited custom tests
+---
 
-#### 3. 🌐 Enhanced Streamlit UI ⭐ Recommended
+#### 2. 🌐 Enhanced Streamlit UI ⭐ Best for Presentation
+
 Professional web interface with 3 tabs:
-- **Interactive Mode:** Visual controls for custom tests
+- **Interactive Mode:** Visual controls for custom tests (sliders for amount, coherence)
 - **Automated Tests:** 5 clickable predefined scenarios
 - **Transaction History:** Table + statistics (allowed/blocked/rate)
 
@@ -81,7 +124,23 @@ Professional web interface with 3 tabs:
 
 **URL:** `http://localhost:8501`
 
+---
+
+#### 3. 🎮 Interactive CLI Demo
+
+Test custom payment scenarios with your own parameters (amount, recipient, coherence score).
+
+```bash
+./run_interactive.sh    # Linux/Mac
+.\run_interactive.ps1   # Windows PowerShell
+```
+
+**Duration:** Variable | **Scenarios:** Unlimited custom tests
+
+---
+
 #### 4. 📜 Simple Demo
+
 Basic single-scenario demo for quick testing.
 
 ```bash
@@ -136,53 +195,45 @@ Agent → Safety Gate → Arc USDC Settlement (mocked)
 
 ---
 
-### Quick Start
-
-**1. Install dependencies:**
-```bash
-pip install -r requirements.txt
-```
-
-**2. Run automated tests (recommended for first use):**
-```bash
-./run_tests.sh          # Linux/Mac
-.\run_tests.ps1         # Windows PowerShell
-```
-
-**3. Launch enhanced web interface:**
-```bash
-./run_ui_enhanced.sh    # Linux/Mac
-.\run_ui_enhanced.ps1   # Windows PowerShell
-```
-
-**For complete installation and usage instructions, see [INSTALL.md](./INSTALL.md)**
-
----
-
-### Demo behavior note
-
-See [SAFETY_SCALE.md](./SAFETY_SCALE.md) for a short explanation of the 1–10 safety scale and why:
-
-- A payment may be allowed in CLI  
-- But blocked in the UI  
-
-This is intentional and demonstrates context-sensitive safety gating.
-
----
-
 ### 📊 Example Test Results
 
 ```
 Scenario                            Result  
 ----------------------------------------------------------------------
-Paiement Normal (3 USDC)            ✅ ALLOW   
-Paiement Rapide (< 10s)             ❌ BLOCK   
-Faible Cohérence (0.3)              ❌ BLOCK   
-Paiement Après Délai                ✅ ALLOW   
-Excellente Cohérence (0.95)         ✅ ALLOW   
+Normal Payment (3 USDC)             ✅ ALLOW   
+Rapid Payment (< 10s)               ❌ BLOCK   
+Low Coherence (0.3)                 ❌ BLOCK   
+Payment After Delay                 ✅ ALLOW   
+Excellent Coherence (0.95)          ✅ ALLOW   
 ----------------------------------------------------------------------
-Total : 3 allowed, 2 blocked
+Total: 3 allowed, 2 blocked (40% blocked = active protection)
 ```
+
+---
+
+### Installation
+
+**1. Clone the repository:**
+```bash
+git clone https://github.com/Eaubin08/agentic-commerce-safe-demo-V2-finale-hackathon-2.git
+cd agentic-commerce-safe-demo-V2-finale-hackathon-2
+```
+
+**2. Install dependencies:**
+```bash
+pip install -r requirements.txt
+```
+
+**3. Run the demo:**
+```bash
+.\run_tests.ps1          # Windows: Automated tests
+.\run_ui_enhanced.ps1    # Windows: Web interface
+
+./run_tests.sh           # Linux/Mac: Automated tests
+./run_ui_enhanced.sh     # Linux/Mac: Web interface
+```
+
+**For complete installation and usage instructions, see [INSTALL.md](./INSTALL.md)**
 
 ---
 
@@ -196,10 +247,11 @@ This project intentionally limits disclosure to demonstrate safety outcomes, not
 
 ### 📚 Documentation
 
-- **[INSTALL.md](./INSTALL.md)** - Complete installation and usage guide
+- **[README.md](./README.md)** - This file (overview and quick start)
 - **[METRICS.md](./METRICS.md)** - Detailed explanation of safety metrics and rules
+- **[PRESENTATION_GUIDE.md](./PRESENTATION_GUIDE.md)** - Complete guide for hackathon presentation
+- **[INSTALL.md](./INSTALL.md)** - Complete installation and usage guide
 - **[SAFETY_SCALE.md](./SAFETY_SCALE.md)** - Safety scale explanation
-- **[DISCLAIMER.md](./DISCLAIMER.md)** - Legal disclaimer
 
 ---
 
@@ -261,7 +313,8 @@ La logique décisionnelle est volontairement opaque, afin de se concentrer sur l
 
 Ce projet propose **4 modes différents** pour explorer et tester le système de sécurité :
 
-#### 1. 🧪 Tests Automatiques
+#### 1. 🧪 Tests Automatiques ⭐ Recommandé pour Découvrir
+
 Exécute 5 scénarios de test prédéfinis automatiquement pour démontrer toutes les règles de sécurité.
 
 ```bash
@@ -271,19 +324,21 @@ Exécute 5 scénarios de test prédéfinis automatiquement pour démontrer toute
 
 **Durée :** ~25 secondes | **Scénarios :** 5 tests automatiques
 
-#### 2. 🎮 Démo Interactive CLI
-Testez des scénarios de paiement personnalisés avec vos propres paramètres (montant, destinataire, score de cohérence).
+**Ce que vous verrez :**
+- ✅ Paiement normal (3 USDC) → AUTORISÉ
+- ❌ Paiement rapide (< 10s) → BLOQUÉ (contrainte temporelle)
+- ❌ Faible cohérence (0.3) → BLOQUÉ (action suspecte)
+- ✅ Paiement après délai → AUTORISÉ
+- ✅ Excellente cohérence (0.95) → AUTORISÉ
 
-```bash
-./run_interactive.sh    # Linux/Mac
-.\run_interactive.ps1   # Windows PowerShell
-```
+**Résultat :** 40% bloqués = protection active
 
-**Durée :** Variable | **Scénarios :** Tests personnalisés illimités
+---
 
-#### 3. 🌐 Interface Streamlit Améliorée ⭐ Recommandé
+#### 2. 🌐 Interface Streamlit Améliorée ⭐ Recommandé pour Présenter
+
 Interface web professionnelle avec 3 onglets :
-- **Mode Interactif :** Contrôles visuels pour tests personnalisés
+- **Mode Interactif :** Contrôles visuels pour tests personnalisés (sliders pour montant, cohérence)
 - **Tests Automatiques :** 5 scénarios prédéfinis cliquables
 - **Historique des Transactions :** Tableau + statistiques (autorisés/bloqués/taux)
 
@@ -294,7 +349,23 @@ Interface web professionnelle avec 3 onglets :
 
 **URL :** `http://localhost:8501`
 
+---
+
+#### 3. 🎮 Démo Interactive CLI
+
+Testez des scénarios de paiement personnalisés avec vos propres paramètres (montant, destinataire, score de cohérence).
+
+```bash
+./run_interactive.sh    # Linux/Mac
+.\run_interactive.ps1   # Windows PowerShell
+```
+
+**Durée :** Variable | **Scénarios :** Tests personnalisés illimités
+
+---
+
 #### 4. 📜 Démo Simple
+
 Démo basique à scénario unique pour test rapide.
 
 ```bash
@@ -349,40 +420,6 @@ Agent → Barrière de sécurité → Paiement USDC Arc (simulé)
 
 ---
 
-### Démarrage Rapide
-
-**1. Installer les dépendances :**
-```bash
-pip install -r requirements.txt
-```
-
-**2. Lancer les tests automatiques (recommandé pour première utilisation) :**
-```bash
-./run_tests.sh          # Linux/Mac
-.\run_tests.ps1         # Windows PowerShell
-```
-
-**3. Lancer l'interface web améliorée :**
-```bash
-./run_ui_enhanced.sh    # Linux/Mac
-.\run_ui_enhanced.ps1   # Windows PowerShell
-```
-
-**Pour les instructions complètes, voir [INSTALL.md](./INSTALL.md)**
-
----
-
-### Note sur le comportement
-
-Voir [SAFETY_SCALE.md](./SAFETY_SCALE.md) pour une explication courte (EN/FR) de l'échelle de sécurité (1–10) et pourquoi :
-
-- Un paiement peut passer en CLI  
-- Mais être bloqué dans l'UI  
-
-Ce comportement est intentionnel.
-
----
-
 ### 📊 Exemple de Résultats de Tests
 
 ```
@@ -394,8 +431,34 @@ Faible Cohérence (0.3)              ❌ BLOCK
 Paiement Après Délai                ✅ ALLOW   
 Excellente Cohérence (0.95)         ✅ ALLOW   
 ----------------------------------------------------------------------
-Total : 3 autorisés, 2 bloqués
+Total : 3 autorisés, 2 bloqués (40% bloqués = protection active)
 ```
+
+---
+
+### Installation
+
+**1. Cloner le repository :**
+```bash
+git clone https://github.com/Eaubin08/agentic-commerce-safe-demo-V2-finale-hackathon-2.git
+cd agentic-commerce-safe-demo-V2-finale-hackathon-2
+```
+
+**2. Installer les dépendances :**
+```bash
+pip install -r requirements.txt
+```
+
+**3. Lancer la démo :**
+```bash
+.\run_tests.ps1          # Windows : Tests automatiques
+.\run_ui_enhanced.ps1    # Windows : Interface web
+
+./run_tests.sh           # Linux/Mac : Tests automatiques
+./run_ui_enhanced.sh     # Linux/Mac : Interface web
+```
+
+**Pour les instructions complètes, voir [INSTALL.md](./INSTALL.md)**
 
 ---
 
@@ -409,10 +472,11 @@ Le niveau de divulgation est volontairement limité afin de montrer les effets, 
 
 ### 📚 Documentation
 
-- **[INSTALL.md](./INSTALL.md)** - Guide complet d'installation et d'utilisation
+- **[README.md](./README.md)** - Ce fichier (vue d'ensemble et démarrage rapide)
 - **[METRICS.md](./METRICS.md)** - Explication détaillée des métriques et règles de sécurité
+- **[PRESENTATION_GUIDE.md](./PRESENTATION_GUIDE.md)** - Guide complet pour la présentation hackathon
+- **[INSTALL.md](./INSTALL.md)** - Guide complet d'installation et d'utilisation
 - **[SAFETY_SCALE.md](./SAFETY_SCALE.md)** - Explication de l'échelle de sécurité
-- **[DISCLAIMER.md](./DISCLAIMER.md)** - Avertissement légal
 
 ---
 
