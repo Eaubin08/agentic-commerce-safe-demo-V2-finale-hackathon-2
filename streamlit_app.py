@@ -73,23 +73,40 @@ if 'last_payment_time' not in st.session_state:
     st.session_state.last_payment_time = None
 
 # Header
-st.markdown('<div class="main-header">🔒 X-108 Safety Gate Demo</div>', unsafe_allow_html=True)
-st.markdown('<div class="sub-header">Agentic Commerce: Securing Autonomous USDC Payments</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-header">🔒 X-108: Structural Safety for Agentic Commerce</div>', unsafe_allow_html=True)
+st.markdown('<div class="sub-header">Turning Time into a Safety Primitive</div>', unsafe_allow_html=True)
+
+# Signature Quote
+st.markdown("""
+<div style="text-align: center; font-size: 1.1rem; font-style: italic; color: #ff6b35; margin: 1.5rem 0; padding: 1rem; background-color: #fff5f2; border-left: 4px solid #ff6b35;">
+    “An agent should not pay because it can — it should pay only when the action survives time.”
+</div>
+""", unsafe_allow_html=True)
 
 # Sidebar
 with st.sidebar:
     st.header("📚 About X-108")
     st.markdown("""
-    **X-108** is a temporal safety middleware that prevents unsafe, premature, 
-    or incoherent autonomous payments by AI agents.
+    **X-108** is a structural safety primitive for agentic commerce.
     
-    **Core Principle:**
-    > "Coherence is not decided. It survives time."
+    **The Problem:**
+    > “Instant execution is not a feature. In finance, it is a threat vector.”
+    
+    Agents act faster than human oversight allows. One hallucination = immediate financial loss.
+    
+    **The Solution: The Mandatory HOLD**
+    
+    Before any irreversible action: **STOP**.
+    
+    This is not “slowing down to think.”  
+    This is **testing stability over time**.
     
     **Safety Rules:**
-    - ⏱️ **Temporal Constraint**: Block payments < 10s apart
-    - 🎯 **Coherence Threshold**: Minimum score of 0.6
-    - ✅ **Action Validation**: Verify intent and parameters
+    - ⏱️ **Temporal Filter** (10s HOLD): Blocks rapid payments
+    - 🎯 **Coherence Threshold** (0.6 min): Validates intent legitimacy
+    - ✅ **Validation**: Ensures data integrity
+    
+    **If the intent wavers over 10 seconds, the intent was unsafe.**
     """)
     
     st.divider()
