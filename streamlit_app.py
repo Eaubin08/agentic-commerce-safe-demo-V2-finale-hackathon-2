@@ -156,10 +156,10 @@ with tab1:
     
     with col1:
         st.subheader("🇬🇧 English Version")
-        if os.path.exists("assets/Building_Trust_in_AI.mp4"):
-            st.video("assets/Building_Trust_in_AI.mp4")
+        if os.path.exists("assets/X-108__Agentic_Safety.mp4"):
+            st.video("assets/X-108__Agentic_Safety.mp4")
         else:
-            st.info("Video file not found. Please ensure 'Building_Trust_in_AI.mp4' is in the assets folder.")
+            st.info("Video file not found. Please ensure 'X-108__Agentic_Safety.mp4' is in the assets folder.")
     
     with col2:
         st.subheader("🇫🇷 Version Française")
@@ -176,8 +176,8 @@ with tab1:
     
     with col1:
         st.subheader("🇬🇧 Safety Gate Mechanism")
-        if os.path.exists("assets/safety_gate_en.png"):
-            st.image("assets/safety_gate_en.png", use_container_width=True)
+        if os.path.exists("assets/safety_gate_en_new.png"):
+            st.image("assets/safety_gate_en_new.png", use_container_width=True)
     
     with col2:
         st.subheader("🇫🇷 Mécanisme de Filtrage")
