@@ -1,0 +1,177 @@
+# PROPRIETARY LICENSE - X-108 SAFETY GATE
+
+**Copyright © 2026 - All Rights Reserved**
+
+---
+
+## CONTEXT
+
+This project "X-108: Structural Safety for Agentic Commerce" is a **demonstration layer** of a larger research system under development. It was created specifically for the **Arc + Circle Agentic Commerce** hackathon (lablab.ai) organized in January 2026.
+
+---
+
+## RESERVED RIGHTS
+
+This source code, documentation, and all associated elements (architecture, algorithms, safety gate logic, temporal filtering, coherence scoring, Web3 integration, Moltbook integration) are the **exclusive intellectual property** of the author.
+
+**Any use, reproduction, modification, distribution, or commercial exploitation is strictly prohibited without prior written authorization.**
+
+---
+
+## SPECIAL HACKATHON AUTHORIZATION
+
+A **limited and non-transferable authorization** is granted to the following entities **only within the scope of the Arc + Circle Agentic Commerce hackathon**:
+
+### Authorized Entities
+- **lablab.ai** (hackathon organizer)
+- **Hackathon jury** (Arc + Circle Agentic Commerce, Track 1)
+- **Hackathon sponsors** (Arc, Circle, official partners)
+
+### Granted Rights (Temporary)
+✅ **Access**: View source code via public GitHub repository  
+✅ **Evaluation**: Test the application via Streamlit Cloud demo URL  
+✅ **Analysis**: Examine architecture, algorithms, and documentation  
+✅ **Presentation**: Use screenshots/videos for hackathon communication  
+
+### Restrictions
+❌ **No copying**: No reproduction of code or algorithms  
+❌ **No modification**: No forks, derivatives, or adaptations  
+❌ **No commercial use**: No use for profit  
+❌ **No redistribution**: No sharing outside hackathon context  
+
+### Authorization Duration
+This authorization automatically expires on **February 28, 2026** (14 days after hackathon deadline). After this date, the repository may be made private without notice.
+
+---
+
+## INTELLECTUAL PROPERTY PROTECTION
+
+### Protected Elements
+This project contains **proprietary innovations** including but not limited to:
+
+1. **X-108 Safety Gate Architecture** (Temporal Filter + Coherence Threshold + Validation)
+2. **Temporal filtering system** with mandatory HOLD before irreversible actions
+3. **Coherence scoring algorithm** for intent validation (0.0 to 1.0 scale)
+4. **Safety decision engine** (`demo/guard_lite.py`) with multi-layer evaluation
+5. **Web3 tokenization layer** ($X108 token economics, staking, governance)
+6. **Moltbook integration** for public transparency and agent discovery
+7. **Smart contract architecture** (ERC20 with fee collection and distribution)
+8. **Design patterns** for structural safety, auditability, and agent commerce governance
+
+### Core Principle
+> **"An agent should not pay because it can — it should pay only when the action survives time."**
+
+This principle and its implementation are proprietary intellectual property.
+
+### Patents and Trademarks
+The author reserves the right to file **patents** or **trademarks** on all or part of this system without prior notice.
+
+---
+
+## LIMITATION OF LIABILITY
+
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DAMAGES ARISING FROM THE USE OF THIS SOFTWARE.
+
+---
+
+## CONTACT
+
+For any commercial license request, collaboration, or usage authorization, please contact the author via the GitHub repository: https://github.com/Eaubin08/agentic-commerce-safe-demo-V2-finale-hackathon-2
+
+---
+
+**Effective Date**: January 23, 2026  
+**Jurisdiction**: France
+
+---
+---
+---
+
+# 🇫🇷 VERSION FRANÇAISE
+
+---
+
+# LICENCE PROPRIÉTAIRE - X-108 SAFETY GATE
+
+**Copyright © 2026 - Tous Droits Réservés**
+
+---
+
+## CONTEXTE
+
+Ce projet "X-108 : Sécurité Structurelle pour le Commerce Agentique" est une **couche démonstrative** d'un système de recherche plus vaste en cours de développement. Il a été créé spécifiquement pour le hackathon **Arc + Circle Agentic Commerce** (lablab.ai) organisé en janvier 2026.
+
+---
+
+## DROITS RÉSERVÉS
+
+Ce code source, cette documentation, et tous les éléments associés (architecture, algorithmes, logique de barrière de sécurité, filtrage temporel, scoring de cohérence, intégration Web3, intégration Moltbook) sont la **propriété intellectuelle exclusive** de l'auteur.
+
+**Toute utilisation, reproduction, modification, distribution, ou exploitation commerciale est strictement interdite sans autorisation écrite préalable.**
+
+---
+
+## AUTORISATION SPÉCIALE HACKATHON
+
+Une **autorisation limitée et non-transférable** est accordée aux entités suivantes **uniquement dans le cadre du hackathon Arc + Circle Agentic Commerce** :
+
+### Entités Autorisées
+- **lablab.ai** (organisateur du hackathon)
+- **Jury du hackathon** (Arc + Circle Agentic Commerce, Track 1)
+- **Sponsors du hackathon** (Arc, Circle, partenaires officiels)
+
+### Droits Accordés (Temporaires)
+✅ **Accès** : Consulter le code source via le repository GitHub public  
+✅ **Évaluation** : Tester l'application via l'URL de démo Streamlit Cloud  
+✅ **Analyse** : Examiner l'architecture, les algorithmes, et la documentation  
+✅ **Présentation** : Utiliser des captures d'écran/vidéos pour la communication du hackathon  
+
+### Restrictions
+❌ **Interdiction de copie** : Aucune reproduction du code ou des algorithmes  
+❌ **Interdiction de modification** : Aucun fork, dérivé, ou adaptation  
+❌ **Interdiction commerciale** : Aucune utilisation à des fins lucratives  
+❌ **Interdiction de redistribution** : Aucun partage en dehors du contexte du hackathon  
+
+### Durée de l'Autorisation
+Cette autorisation expire automatiquement le **28 février 2026** (14 jours après la deadline du hackathon). Après cette date, le repository pourra être rendu privé sans préavis.
+
+---
+
+## PROTECTION DE LA PROPRIÉTÉ INTELLECTUELLE
+
+### Éléments Protégés
+Ce projet contient des **innovations propriétaires** incluant mais non limitées à :
+
+1. **Architecture X-108 Safety Gate** (Filtre Temporel + Seuil de Cohérence + Validation)
+2. **Système de filtrage temporel** avec HOLD obligatoire avant actions irréversibles
+3. **Algorithme de scoring de cohérence** pour validation d'intention (échelle 0.0 à 1.0)
+4. **Moteur de décision de sécurité** (`demo/guard_lite.py`) avec évaluation multi-couches
+5. **Couche de tokenisation Web3** (économie du token $X108, staking, gouvernance)
+6. **Intégration Moltbook** pour transparence publique et découverte d'agents
+7. **Architecture de smart contract** (ERC20 avec collecte et distribution de frais)
+8. **Design patterns** pour sécurité structurelle, auditabilité, et gouvernance du commerce agentique
+
+### Principe Fondamental
+> **"Un agent ne devrait pas payer parce qu'il peut — il devrait payer seulement quand l'action survit au temps."**
+
+Ce principe et son implémentation sont une propriété intellectuelle propriétaire.
+
+### Brevets et Marques
+L'auteur se réserve le droit de déposer des **brevets** ou **marques** sur tout ou partie de ce système sans notification préalable.
+
+---
+
+## LIMITATION DE RESPONSABILITÉ
+
+CE LOGICIEL EST FOURNI "TEL QUEL", SANS GARANTIE D'AUCUNE SORTE, EXPRESSE OU IMPLICITE. EN AUCUN CAS L'AUTEUR NE POURRA ÊTRE TENU RESPONSABLE DE TOUT DOMMAGE DÉCOULANT DE L'UTILISATION DE CE LOGICIEL.
+
+---
+
+## CONTACT
+
+Pour toute demande de licence commerciale, collaboration, ou autorisation d'utilisation, veuillez contacter l'auteur via le repository GitHub : https://github.com/Eaubin08/agentic-commerce-safe-demo-V2-finale-hackathon-2
+
+---
+
+**Date d'effet** : 23 janvier 2026  
+**Juridiction** : France
