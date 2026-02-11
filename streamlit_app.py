@@ -459,8 +459,43 @@ with tab5:
     
     st.divider()
     
-    # Metrics
-    st.subheader("📊 Key Metrics")
+    # Note for demo mode
+    st.info("""
+    💡 **Demo Mode**: This page shows two types of metrics:
+    - **Real-time demo metrics** (from your current session) ← Try the Interactive Mode or Automated Tests!
+    - **Simulated production-scale data** (what the protocol would look like at scale)
+    """)
+    
+    # Real-time metrics from current session
+    if st.session_state.transaction_history:
+        st.subheader("📊 Real-Time Demo Metrics (Your Current Session)")
+        
+        # Calculate real metrics
+        total_txs = len(st.session_state.transaction_history)
+        allowed_txs = sum(1 for t in st.session_state.transaction_history if t['decision'] == 'ALLOW')
+        total_amount = sum(t['amount'] for t in st.session_state.transaction_history if t['decision'] == 'ALLOW')
+        total_fees = total_amount * 0.001  # 0.1% fee
+        
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            st.metric("Total Transactions", total_txs)
+            st.metric("Total Fees Collected", f"{total_fees:.3f} USDC")
+        
+        with col2:
+            st.metric("✅ Allowed", allowed_txs)
+            st.metric("❌ Blocked", total_txs - allowed_txs)
+        
+        with col3:
+            if total_txs > 0:
+                st.metric("Block Rate", f"{((total_txs - allowed_txs) / total_txs) * 100:.1f}%")
+            st.metric("Total Volume", f"{total_amount} USDC")
+        
+        st.divider()
+    
+    # Simulated production-scale metrics
+    st.subheader("📊 Simulated Production-Scale Metrics")
+    st.caption("These metrics illustrate what X-108 would look like at scale in production")
     
     col1, col2, col3 = st.columns(3)
     
