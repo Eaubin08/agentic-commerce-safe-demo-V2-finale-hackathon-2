@@ -293,7 +293,13 @@ This is a hackathon prototype. Contributions, issues, and feature requests are w
 
 ## 📜 License
 
-This project is open source and available under the MIT License.
+This project is protected under a **Proprietary License**.
+
+**Copyright © 2026 - All Rights Reserved**
+
+A temporary authorization is granted to hackathon organizers, jury, and sponsors for evaluation purposes only.
+
+👉 **[Read the full license](./LICENSE)**
 
 ---
 
