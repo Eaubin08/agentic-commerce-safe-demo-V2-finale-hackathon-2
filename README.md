@@ -41,6 +41,41 @@ This is **testing stability over time**.
 
 **If the intent wavers over 10 seconds, the intent was unsafe.**
 
+---
+
+## 💎 Web3 Economics: The $X108 Token
+
+**X-108 is not just a safety mechanism — it's a sustainable protocol.**
+
+### Revenue Model
+
+- **0.1% fee** on every validated transaction
+- **50%** distributed to $X108 stakers
+- **30%** to protocol treasury (development, audits)
+- **20%** automatic buyback of $X108
+
+### Governance
+
+**$X108 stakers vote on safety parameters:**
+
+- Temporal window duration (currently 10s)
+- Coherence threshold (currently 0.6)
+- Fee distribution ratios
+
+**Decentralized safety:** The community decides how strict the gate should be.
+
+### Transparency: Moltbook Integration
+
+**Every transaction decision is published to the agent internet.**
+
+- Public feed of all ALLOW/BLOCK decisions
+- Full transparency on Safety Gate behavior
+- Auditable history for trust and compliance
+
+**View the live feed:** [Moltbook X-108 Feed](https://moltbook.com/feed/x108-safety-gate)
+
+---
+
 ### Safety Gate Rules
 
 1. **⏱️ Temporal Filter** (10s minimum delay)

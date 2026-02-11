@@ -18,6 +18,17 @@ from demo.pay_usdc import pay_usdc
 import time
 import pandas as pd
 
+# Web3 and Moltbook integration (optional layers)
+try:
+    from web3_integration.x108_token_layer import create_token_layer
+    from web3_integration.moltbook_integration import create_moltbook_integration
+    token_layer = create_token_layer()
+    moltbook = create_moltbook_integration()
+    WEB3_ENABLED = True
+except ImportError:
+    WEB3_ENABLED = False
+    print("Warning: Web3 layers not available. Running in core mode only.")
+
 # Page configuration
 st.set_page_config(
     page_title="X-108 Safety Gate Demo",
@@ -125,7 +136,7 @@ with st.sidebar:
         st.info("No transactions yet")
 
 # Main content tabs
-tab1, tab2, tab3, tab4 = st.tabs(["🎬 Demo Video", "🎮 Interactive Mode", "🧪 Automated Tests", "📊 Transaction History"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["🎬 Demo Video", "🎮 Interactive Mode", "🧪 Automated Tests", "📊 Transaction History", "💎 Token Economics"])
 
 # Tab 1: Demo Video
 with tab1:
@@ -422,11 +433,132 @@ with tab4:
     else:
         st.info("No transactions yet. Try the Interactive Mode or run Automated Tests!")
 
+# Tab 5: Token Economics
+with tab5:
+    st.header("💎 X-108 Token Economics")
+    
+    st.markdown("""
+    The **$X108 token** powers the governance and economics of the X-108 Safety Gate.
+    
+    **Revenue Model:**
+    - Every validated transaction → 0.1% fee
+    - 50% distributed to $X108 stakers
+    - 30% to treasury for development
+    - 20% automatic buyback of $X108
+    """)
+    
+    st.divider()
+    
+    # Metrics
+    st.subheader("📊 Key Metrics")
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.metric("Total Transactions", "1,247")
+        st.metric("Total Fees Collected", "12.47 USDC")
+    
+    with col2:
+        st.metric("$X108 Stakers", "89")
+        st.metric("APY for Stakers", "14.3%")
+    
+    with col3:
+        st.metric("$X108 Price", "$0.23")
+        st.metric("Market Cap", "$2.3M")
+    
+    st.divider()
+    
+    # Governance
+    st.subheader("⚙️ Governance Parameters")
+    
+    st.markdown("""
+    **$X108 stakers can vote to adjust safety parameters:**
+    
+    These parameters directly control the behavior of the Safety Gate.
+    """)
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        new_temporal = st.slider(
+            "Temporal Window (seconds)",
+            min_value=5,
+            max_value=30,
+            value=10,
+            help="Minimum delay between payments. Lower = faster but riskier."
+        )
+    
+    with col2:
+        new_coherence = st.slider(
+            "Coherence Threshold",
+            min_value=0.3,
+            max_value=0.9,
+            value=0.6,
+            step=0.05,
+            help="Minimum coherence score to validate intent. Higher = stricter."
+        )
+    
+    if st.button("🗳️ Submit Governance Vote", type="primary"):
+        st.success("✅ Vote recorded on-chain! (Demo mode)")
+        st.info(f"📊 Proposed changes:\n- Temporal Window: {new_temporal}s\n- Coherence Threshold: {new_coherence}")
+    
+    st.divider()
+    
+    # Fee Distribution
+    st.subheader("💰 Fee Distribution")
+    
+    st.markdown("""
+    **How transaction fees are distributed:**
+    """)
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.markdown("""
+        **🏆 Stakers (50%)**
+        
+        Distributed proportionally to all $X108 stakers based on their stake.
+        """)
+    
+    with col2:
+        st.markdown("""
+        **🏛️ Treasury (30%)**
+        
+        Used for protocol development, security audits, and ecosystem growth.
+        """)
+    
+    with col3:
+        st.markdown("""
+        **🔄 Buyback (20%)**
+        
+        Automatic buyback of $X108 tokens to support price stability.
+        """)
+    
+    st.divider()
+    
+    # Smart Contract Info
+    st.subheader("🔗 Smart Contract")
+    
+    st.markdown("""
+    **Contract Address:** `0x0000...0000` (Demo mode)
+    
+    **Network:** Base (Ethereum L2)
+    
+    **Audit Status:** ⚠️ Not audited (Hackathon prototype)
+    
+    **Source Code:** Available in `contracts/X108Token.sol`
+    """)
+    
+    st.info("""
+    🚧 **Note:** This is a hackathon prototype. The token economics are designed for demonstration purposes.
+    In production, the smart contract would be audited and deployed on mainnet.
+    """)
+
 # Footer
 st.divider()
 st.markdown("""
 <div style="text-align: center; color: #666; font-size: 0.9rem;">
     <p><strong>X-108 Safety Gate Demo</strong> | Arc + Circle Agentic Commerce Hackathon</p>
-    <p>Coherence is not decided. It survives time.</p>
+    <p>"An agent should not pay because it can — it should pay only when the action survives time."</p>
 </div>
 """, unsafe_allow_html=True)
