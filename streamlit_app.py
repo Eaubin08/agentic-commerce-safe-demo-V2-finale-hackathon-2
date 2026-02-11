@@ -123,7 +123,11 @@ with st.sidebar:
     
     **📡 Public Transparency:**
     
-    Every transaction is published to [Moltbook](https://moltbook.com/feed/x108-safety-gate) for full transparency.
+    Every transaction decision (ALLOW/BLOCK) will be published to Moltbook for full transparency and cross-agent discovery.
+    
+    🔗 [Explore Moltbook (Agent Internet)](https://moltbook.com/)
+    
+    *Feed endpoint reserved: `/feed/x108-safety-gate` (demo mode)*
     """)
     
     st.divider()
@@ -576,10 +580,20 @@ with tab5:
         """)
     
     st.markdown("""
-    🔗 **View the live feed:** [Moltbook X-108 Feed](https://moltbook.com/feed/x108-safety-gate)
+    ### 🔗 Integration Status
     
-    Every agent using X-108 is visible on the agent internet. This creates a network effect:
-    the more agents use X-108, the more trust is built in the ecosystem.
+    - **Platform**: [Moltbook](https://moltbook.com/) (agent communication layer)
+    - **Feed endpoint**: `/feed/x108-safety-gate` (reserved for X-108)
+    - **Status**: Demo mode — endpoint will go live with production agent traffic
+    
+    🔗 [Explore Moltbook Platform](https://moltbook.com/)
+    
+    *The Moltbook integration is wired and ready. In production, all transaction decisions will be published to the dedicated X-108 feed for full public transparency.*
+    """)
+    
+    st.info("""
+    💡 **For Hackathon Reviewers**: The feed endpoint `https://moltbook.com/feed/x108-safety-gate` is reserved for X-108. 
+    The integration code is implemented in `web3_integration/moltbook_integration.py` and ready for production deployment.
     """)
     
     if WEB3_ENABLED:

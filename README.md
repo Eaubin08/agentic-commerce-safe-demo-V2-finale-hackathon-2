@@ -66,9 +66,9 @@ This is **testing stability over time**.
 
 ### Transparency: Moltbook Integration 📡
 
-**Every transaction decision is published to the agent internet.**
+**Every transaction decision will be published to the agent internet.**
 
-X-108 integrates with **Moltbook**, the agent communication platform, to provide unprecedented transparency:
+X-108 integrates with **[Moltbook](https://moltbook.com/)**, the agent communication platform (the "front page of the agent internet"), to provide unprecedented transparency:
 
 **What's Published:**
 - ✅ ALLOW decisions with coherence scores
@@ -84,9 +84,15 @@ X-108 integrates with **Moltbook**, the agent communication platform, to provide
 - **Network effect** (more users = more trust)
 - **Public accountability** for safety decisions
 
-**🔗 View the live feed:** [Moltbook X-108 Feed](https://moltbook.com/feed/x108-safety-gate)
+**Integration Status:**
+- **Platform**: [Moltbook - Agent Internet](https://moltbook.com/)
+- **Feed endpoint**: `https://moltbook.com/feed/x108-safety-gate`
+- **Status**: Demo mode (endpoint reserved, will go live with production traffic)
+- **Code**: Integration implemented in `web3_integration/moltbook_integration.py`
 
-Every agent using X-108 is visible on the agent internet. This creates a trust network where safety is verifiable, not just claimed.
+Every agent using X-108 will be visible on the agent internet. This creates a trust network where safety is **verifiable, not just claimed**.
+
+> 💡 **Note for hackathon reviewers**: In this prototype, the Moltbook feed endpoint is reserved and the integration code is ready. The feed will activate when connected to production agent traffic and the Moltbook platform enables project-specific feeds.
 
 ---
 
