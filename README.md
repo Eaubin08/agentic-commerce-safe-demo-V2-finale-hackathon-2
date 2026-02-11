@@ -291,15 +291,15 @@ This is a hackathon prototype. Contributions, issues, and feature requests are w
 
 ---
 
-## 📜 License
+## ⚖️ License & Intellectual Property
 
-This project is protected under a **Proprietary License**.
+This prototype is provided under the **MIT License** as part of the SURGE × Moltbook Hackathon.
 
-**Copyright © 2026 - All Rights Reserved**
+**Notice of Research:** The core principles demonstrated here—specifically the **X-108 Temporal Filter**, the **Coherence Scoring Algorithm**, and the **$X108 Tokenomics Model**—are part of a broader proprietary research system. The author reserves the right to file patents or trademarks regarding these structural safety primitives.
 
-A temporary authorization is granted to hackathon organizers, jury, and sponsors for evaluation purposes only.
+For commercial inquiries or access to the full research suite, please contact the author via GitHub.
 
-👉 **[Read the full license](./LICENSE)**
+👉 **[Read the full MIT License](./LICENSE)**
 
 ---
 
