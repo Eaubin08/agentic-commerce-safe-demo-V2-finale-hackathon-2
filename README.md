@@ -64,15 +64,29 @@ This is **testing stability over time**.
 
 **Decentralized safety:** The community decides how strict the gate should be.
 
-### Transparency: Moltbook Integration
+### Transparency: Moltbook Integration 📡
 
 **Every transaction decision is published to the agent internet.**
 
-- Public feed of all ALLOW/BLOCK decisions
-- Full transparency on Safety Gate behavior
-- Auditable history for trust and compliance
+X-108 integrates with **Moltbook**, the agent communication platform, to provide unprecedented transparency:
 
-**View the live feed:** [Moltbook X-108 Feed](https://moltbook.com/feed/x108-safety-gate)
+**What's Published:**
+- ✅ ALLOW decisions with coherence scores
+- ❌ BLOCK decisions with detailed reasons
+- ⏱️ Temporal check results
+- 💰 Transaction amounts and recipients
+- 🔖 Agent identifiers
+
+**Why It Matters:**
+- **Auditable history** for regulatory compliance
+- **Trust through transparency** (no black box)
+- **Agent discovery** (find other X-108 users)
+- **Network effect** (more users = more trust)
+- **Public accountability** for safety decisions
+
+**🔗 View the live feed:** [Moltbook X-108 Feed](https://moltbook.com/feed/x108-safety-gate)
+
+Every agent using X-108 is visible on the agent internet. This creates a trust network where safety is verifiable, not just claimed.
 
 ---
 

@@ -118,6 +118,12 @@ with st.sidebar:
     - ✅ **Validation**: Ensures data integrity
     
     **If the intent wavers over 10 seconds, the intent was unsafe.**
+    
+    ---
+    
+    **📡 Public Transparency:**
+    
+    Every transaction is published to [Moltbook](https://moltbook.com/feed/x108-safety-gate) for full transparency.
     """)
     
     st.divider()
@@ -533,6 +539,63 @@ with tab5:
         
         Automatic buyback of $X108 tokens to support price stability.
         """)
+    
+    st.divider()
+    
+    # Moltbook Integration
+    st.subheader("📡 Moltbook Integration: Public Transparency")
+    
+    st.markdown("""
+    **Every transaction decision is published to the agent internet.**
+    
+    X-108 integrates with **Moltbook** to provide full transparency on Safety Gate behavior.
+    """)
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        **📊 What's Published:**
+        
+        - ✅ ALLOW decisions with coherence score
+        - ❌ BLOCK decisions with reason
+        - ⏱️ Temporal check results
+        - 💰 Transaction amounts
+        - 🔖 Agent identifiers
+        """)
+    
+    with col2:
+        st.markdown("""
+        **🎯 Why It Matters:**
+        
+        - **Auditable history** for compliance
+        - **Trust through transparency**
+        - **Agent discovery** (find X-108 users)
+        - **Public accountability**
+        - **No black box**
+        """)
+    
+    st.markdown("""
+    🔗 **View the live feed:** [Moltbook X-108 Feed](https://moltbook.com/feed/x108-safety-gate)
+    
+    Every agent using X-108 is visible on the agent internet. This creates a network effect:
+    the more agents use X-108, the more trust is built in the ecosystem.
+    """)
+    
+    if WEB3_ENABLED:
+        try:
+            stats = moltbook.get_stats()
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                st.metric("Total Posts", stats.get('total_posts', 0))
+            with col2:
+                st.metric("Allowed", stats.get('allowed_posts', 0))
+            with col3:
+                st.metric("Blocked", stats.get('blocked_posts', 0))
+        except:
+            st.info("🚧 Moltbook stats will be available when connected to the live feed.")
+    else:
+        st.info("🚧 Moltbook integration is in demo mode. Connect to see live stats.")
     
     st.divider()
     
